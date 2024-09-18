@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Mendix Page Name Copier",
+  "version": "1.0",
+  "description": "Kopieert de Mendix paginanaam met een sneltoets",
+  "permissions": [
+    "activeTab",
+    "clipboardWrite"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "commands": {
+    "copy-page-name": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+P",
+        "mac": "Command+Shift+P"
+      },
+      "description": "Kopieer Mendix paginanaam"
+    }
+  }
+}
