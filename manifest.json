@@ -1,15 +1,11 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Mendix Page Name Copier",
   "version": "1.0",
   "description": "Kopieert de Mendix paginanaam met een sneltoets",
-  "permissions": [
-    "activeTab",
-    "clipboardWrite"
-  ],
+  "permissions": ["scripting", "activeTab", "clipboardWrite"],
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "service_worker": "background.js"
   },
   "commands": {
     "copy-page-name": {
@@ -19,5 +15,12 @@
       },
       "description": "Kopieer Mendix paginanaam"
     }
-  }
+  },
+  "host_permissions": ["<all_urls>"],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
